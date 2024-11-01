@@ -5,7 +5,7 @@ def import_data(filename: str)
     data = pd.read_excel(filename)
     return data
 
-def filter_data(df: pd.DataFrame)
+def filter_data(df: pd.DataFrame) -> pd.DataFrame
 
     df = df.dropna(subset=['CustomerID'])
 
@@ -13,7 +13,7 @@ def filter_data(df: pd.DataFrame)
 
     return df
 
-def loyal_customers(df: pd.DataFrame, min_purchases: int)
+def loyal_customers(df: pd.DataFrame, min_purchases: int) -> pd.DataFrame
 
     customer_counts = df['customer_id'].value_counts()
     
@@ -24,7 +24,7 @@ def loyal_customers(df: pd.DataFrame, min_purchases: int)
     
     return result_df
 
-def quarterly_revenue(df: pd.DataFrame)
+def quarterly_revenue(df: pd.DataFrame) -> pd.DataFrame
 
     df['date'] = pd.to_datetime(df['date'])
     
@@ -34,7 +34,7 @@ def quarterly_revenue(df: pd.DataFrame)
     
     return quarterly_summary
 
-def high_demand_products(df: pd.DataFrame, top_n: int)
+def high_demand_products(df: pd.DataFrame, top_n: int) -> pd.DataFrame
 
     product_demand = df.groupby('product')['quantity'].sum().reset_index()
     
@@ -42,12 +42,12 @@ def high_demand_products(df: pd.DataFrame, top_n: int)
     
     return top_products
 
-def purchase_patterns(df: pd.DataFrame)
+def purchase_patterns(df: pd.DataFrame) -> pd.DataFrame
    
     summary = df.groupby('product').agg(avg_quantity=('quantity', 'mean'),avg_unit_price=('unit_price', 'mean')).reset_index()
     return summary
 
-def answer_conceptual_questions()
+def answer_conceptual_questions() -> dict:
     answers = {
         "Q1": {"A"},
         "Q2": {"B"},  # Quarterly aggregation helps reveal seasonal trends.
