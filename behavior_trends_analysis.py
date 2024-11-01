@@ -49,11 +49,11 @@ def purchase_patterns(df: pd.DataFrame) -> pd.DataFrame
 
 def answer_conceptual_questions() -> dict:
     answers = {
-        "Q1": {"A"},
-        "Q2": {"B"},  # Quarterly aggregation helps reveal seasonal trends.
-        "Q3": {"C"},  # Loyal customers are easier to retain and less likely to churn.
-        "Q4": {"A"},  # To optimize pricing strategies based on demand.
-        "Q5": {"A"},  # Counting the total quantity sold of each product.
+        "Q1": {"A", "C", "D"}, 
+        "Q2": {"A", "B", "D"},
+        "Q3": {"A", "B", "C"},
+        "Q4": {"A", "B", "C"}, 
+        "Q5": {"A", "B", "D"}, 
     }
     return answers
 
